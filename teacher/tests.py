@@ -1,6 +1,8 @@
 from django.test import TestCase
 import datetime
 from teacher.forms import TeacherForm
+from django.test import Client
+from django.urls import reverse
 class AddTeacherTestCase(TestCase):
 	def setUp(self):
 		self.data={

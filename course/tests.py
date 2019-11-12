@@ -3,22 +3,22 @@ import datetime
 from course.forms import CourseForm
 
 class AddCourseTestCase(TestCase):
-   	def setUp(self):
-	   	self.data={
+	def setUp(self):
+		self.data={
 			"name":"Design",
 			"duration_in_months":10,
 			"start_date":datetime.date(2019,2,1),
 			"end_date":datetime.date(2019,12,1),
 			"course_description":"Graphic Design",
-	   	}
-	   	self.bad_data={
+		}
+		self.bad_data={
 			"name":"Design",
 			"duration_in_months":10,
 			"start_date":datetime.date(2019,2,1),
 			"end_date":"done",
 			"course_description":"Graphic Design",
 			"teacher":"Nyandia Kamawe",
-	   	}
+		}
 	def test_course_form_accepts_valid_data(self):
 		form = CourseForm(self.data)
 		self.assertTrue(form.is_valid())
